@@ -52,3 +52,16 @@ Breadcrumbs::for('ver_tableta', function (BreadcrumbTrail $trail, Product $produ
     $trail->parent('tablets');
     $trail->push($producto->nombre, route('tableta.mostrar', $producto));
 });
+
+
+Breadcrumbs::for('registro', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Registrarse', route('user.registro'));
+});
+
+
+Breadcrumbs::for('login', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Login', route('user.login'));
+});
+

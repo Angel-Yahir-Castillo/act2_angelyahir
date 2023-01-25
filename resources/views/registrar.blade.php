@@ -3,10 +3,10 @@
 @section('title', 'Registrarse')
 
 @section('content')
-    <div class="section container">
+    <div class=" container">
 
-        <div class="row">
-
+        <div class="row section">
+        {{ Breadcrumbs::render('registro') }}
             <form action="{{ route('validar.registro') }}" method="POST" class="col s12">
 
                 @csrf 

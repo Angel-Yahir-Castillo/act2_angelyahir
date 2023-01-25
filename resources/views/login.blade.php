@@ -3,12 +3,12 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="section container">
+    <div class=" container">
 
-        <div class="row">
-
-            <div class="col m2 l3 s0"></div>
+        <div class="row section">
+            <div class="col m2 l3 s0 "></div>
             <form action="{{ route('inicia.sesion') }}" method="POST" class="col l6 m8 s12">
+            {{ Breadcrumbs::render('login') }}
             @csrf 
                 <div class="row card-panel">
 

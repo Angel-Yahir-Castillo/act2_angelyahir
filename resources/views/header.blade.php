@@ -25,15 +25,15 @@
         <div class="navbar-fixed">
             <nav style="background-color: #143D59;" >
                 <div class="nav-wrapper">
-                    <a href="{{ route('home')}}"  class="brand-logo center white-text">Actividad 2</a>
+                    <a href="{{ route('user.sesion')}}"  class="brand-logo center white-text">Actividad 2</a>
                     <a href="#" data-target="menu-responsive" class="sidenav-trigger">
                         <i class="material-icons">menu</i>
                     </a>
         
                     <ul class="right hide-on-med-and-down" style="padding-right:20px">
-                        <li><a  href="{{ route('home')}}" style="<?php if(request()->Is('inicio')) echo 'background-color: #F4B41A; color:#000;';?>" class=""><b>Inicio</b></a></li> 
+                        <li><a  href="{{ route('user.sesion')}}" style="<?php if(request()->Is('inicio')) echo 'background-color: #F4B41A; color:#000;';?>" class=""><b>Inicio</b></a></li> 
                         <li>
-                            <a class="" href="{{ route('productos.show') }}" style="<?php if(request()->Is('productos')) echo 'background-color: #F4B41A; color:#000;'; ?>">
+                            <a class="" href="{{ route('productos.show') }}" style="<?php if(request()->Is('productos') or request()->Is('productos/*')) echo 'background-color: #F4B41A; color:#000;'; ?>">
                                 <b>Productos</b>
                                 <i class="material-icons left">
                                 computer
@@ -68,7 +68,7 @@
                     <ul class="right hide-on-med-and-down" style="padding-right:20px">
                         <li><a  href="{{ route('home')}}" style="<?php if(request()->Is('/')) echo 'background-color: #F4B41A; color:#000;';?>" class=""><b>Inicio</b></a></li> 
                         <li>
-                            <a class="" href="{{ route('productos.show') }}" style="<?php if(request()->Is('productos')) echo 'background-color: #F4B41A; color:#000;'; ?>">
+                            <a class="" href="{{ route('productos.show') }}" style="<?php if(request()->Is('productos/*') or request()->Is('productos')) echo 'background-color: #F4B41A; color:#000;'; ?>">
                                 <b>Productos</b>
                                 <i class="material-icons left">
                                 computer
