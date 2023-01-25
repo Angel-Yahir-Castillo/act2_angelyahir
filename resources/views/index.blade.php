@@ -6,7 +6,7 @@
     <div class="container">
 
         <div class="section row">
-        {{ Breadcrumbs::render('home') }}
+        
 
         <center><h5>INGENIERIA EN DESARROLLO Y GESTION DE SOFTWARE</h5></center>
         <center><img src="{{ asset('img/logo_uthh.png') }}" style="height: 200px; width: 200px;"></center>

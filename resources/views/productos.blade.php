@@ -23,16 +23,16 @@
         <div class="row ">
         {{ Breadcrumbs::render('productos') }}
         <h1>Productos</h1>
-            <div class="col s12">
-                <a class="btn" href="{{ route('productos.computadoras') }}"> Computadoras </a>
+            <div class="row">
+                <a class="btn" href="{{ route('productos.computadoras') }}"> Computadoras  </a>
             </div>
 
-            <div class="col s12">
-                <a class="btn" href="{{ route('productos.telefonos') }}"> SmarthPhones </a>
+            <div class="row">
+                <a class="btn" href="{{ route('productos.telefonos') }}"> SmarthPhones </a> <br>
             </div>
 
-            <div class="col s12">
-                <a class="btn" href="{{ route('productos.tablets') }}"> Tablets </a>
+            <div class="row">
+                <a class="btn" href="{{ route('productos.tablets') }}"> Tablets </a> <br>
             </div>
         </div>
     </div>
