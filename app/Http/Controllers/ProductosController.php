@@ -97,4 +97,20 @@ class ProductosController extends Controller
         return view('busqueda', $data);
 
     }
+
+    public function busquedaAvanzada(Request $request){
+
+        $productos = Product::where('marca',  'Like', '%'.$request->marca.'%')->where('categoria', $request->categoria)->get();
+    
+        $data = [
+            'productos' => $productos,
+        ];
+        if($productos == null){
+            return 'No hay productos';
+        }
+
+        
+        return view('busqueda', $data);
+
+    }
 }

@@ -32,6 +32,7 @@
                     </a>
         
                     <ul class="right hide-on-med-and-down" style="padding-right:20px">
+                        
                         <li><a  href="{{ route('user.sesion')}}" style="<?php if(request()->Is('inicio')) echo 'background-color: #F4B41A; color:#000;';?>" class=""><b>Inicio</b></a></li> 
                         <li>
                             <a class="" href="{{ route('productos.show') }}" style="<?php if(request()->Is('productos') or request()->Is('productos/*')) echo 'background-color: #F4B41A; color:#000;'; ?>">

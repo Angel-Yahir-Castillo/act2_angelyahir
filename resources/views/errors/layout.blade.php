@@ -48,6 +48,11 @@
                     @yield('message')
                 </div>
             </div>
+            <div class="col s12 m3 l4"></div>
+                <div class="col s12 m6 l4">
+                    <img class="responsive-img" alt="Imagen de un telefono descompuesto" src="{{ asset('img/error.jpg') }}">
+                </div>
+                <div class="col s12 m3 l4"></div>
         </div>
     </body>
 </html>
