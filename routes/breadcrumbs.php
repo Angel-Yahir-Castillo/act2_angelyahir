@@ -53,6 +53,16 @@ Breadcrumbs::for('ver_tableta', function (BreadcrumbTrail $trail, Product $produ
     $trail->push($producto->nombre, route('tableta.mostrar', $producto));
 });
 
+Breadcrumbs::for('buscar', function (BreadcrumbTrail $trail) {
+    $trail->parent('productos');
+    $trail->push('Busqueda', route('busqueda.simple'));
+});
+
+Breadcrumbs::for('buscarUno', function (BreadcrumbTrail $trail, Product $producto) {
+    $trail->parent('productos');
+    $trail->push($producto->nombre, route('producto.mostrar', $producto));
+});
+
 
 Breadcrumbs::for('registro', function (BreadcrumbTrail $trail) {
     $trail->parent('home');

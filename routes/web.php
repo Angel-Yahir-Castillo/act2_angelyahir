@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('productos', [ProductosController::class, 'mostrar'])->name('productos.show');
 
+
+
 Route::get('productos/computadoras', [ProductosController::class, 'computadoras'])->name('productos.computadoras');
 
 Route::get('productos/smarthphones', [ProductosController::class, 'telefonos'])->name('productos.telefonos');
@@ -33,6 +35,12 @@ Route::get('productos/smarthphones/{producto}', [ProductosController::class, 'te
 
 Route::get('productos/tablets/{producto}', [ProductosController::class, 'tabletsVer'])->name('tableta.mostrar');
 
+
+
+Route::get('productos/busqueda', [ProductosController::class, 'busqueda'])->name('busqueda.simple');
+
+
+Route::get('productos/{producto}', [ProductosController::class, 'productoVer'])->name('producto.mostrar');
 
 Route::get('login', [UserController::class, 'login'])->name('user.login');
 

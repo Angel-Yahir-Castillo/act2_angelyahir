@@ -69,4 +69,32 @@ class ProductosController extends Controller
 
     }
 
+
+    public function productoVer($productoVer){
+
+        $producto = Product::where('nombre', $productoVer)->first();
+    
+        if($producto == null){
+            abort(404);
+        }
+
+        return view('unProducto', compact('producto'));
+
+    }
+
+
+    public function busqueda(Request $request){
+
+        $productos = Product::where('nombre',  'Like', '%'.$request->nombre.'%')->get();
+    
+        $data = [
+            'productos' => $productos,
+        ];
+        if($productos == null){
+            return 'No hay productos';
+        }
+
+        return view('busqueda', $data);
+
+    }
 }
