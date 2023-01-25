@@ -15,7 +15,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('header');
+    return view('index');
 })->name('home');
 
 Route::get('productos', [ProductosController::class, 'mostrar'])->name('productos.show');
@@ -37,3 +37,12 @@ Route::get('productos/tablets/{producto}', [ProductosController::class, 'tablets
 Route::get('login', [UserController::class, 'login'])->name('user.login');
 
 Route::get('registro', [UserController::class, 'register'])->name('user.registro');
+
+Route::get('inicio', [UserController::class, 'sesion'])->middleware('auth')->name('user.sesion');
+
+
+Route::post('validar-registro',[UserController::class, 'validar_register'])->name('validar.registro');
+
+Route::post('inicia-sesion',[UserController::class, 'inicia_sesion'])->name('inicia.sesion');
+
+Route::get('logout',[UserController::class, 'logout'])->name('user.logout');

@@ -1,5 +1,6 @@
 @extends('header')
 
+
 @section('title', 'Productos')
 
 @section('content')

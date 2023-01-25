@@ -34,7 +34,7 @@
                 <div class="col s12 m3 l4"></div>
 
                 <div class="col s12 ">
-                    <center><a href="{{ url('/') }}" class="btn yellow black-text">Regresar al inicio</a></center>
+                    <center><a href="{{ url()->previous() }}" class="btn yellow black-text">Regresar al inicio</a></center>
                 </div>
             </div>
         </div>
