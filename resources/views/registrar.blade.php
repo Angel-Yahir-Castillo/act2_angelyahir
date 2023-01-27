@@ -27,7 +27,7 @@
                         <small style="color: red;">@error('correo') {{ $message }} @enderror</small> 
                     </div>
 
-                    <div class="input-field col m5 l5 s11">
+                    <div class="input-field col  s11">
                         <input id="contrasena" name="contrasena" value="{{ old('contrasena') }}" type="password" class="validate" required
                             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,}$" title="La contraseña debe contener al menos una letra mayuscula, 
                             una letra miniscula, un numero, un caracter especial y una longitud de al menos 8 caracteres">
@@ -38,13 +38,6 @@
                         <button style="background-color: #fff; border:#fff; cursor:pointer;" type="button" onclick="mostrarContrasena()"><i class="material-icons ">remove_red_eye</i></button>
                     </div>
 
-                    <div class="input-field col m5 l5 s11">
-                        <input id="contra" name="contra" type="password" onkeypress="comprobarContrasena()" class="validate" required>
-                        <label for="contra">Repetir Contraseña:</label>
-                    </div>
-                    <div class="col m1 l1 s1">
-                        <button style="background-color: #fff; border:#fff; cursor:pointer;" type="button" onclick="mostrarContrasena2()"><i class="material-icons ">remove_red_eye</i></button>
-                    </div>
 
 
 
