@@ -14,17 +14,21 @@
 
                     <center><b>Iniciar sesion</b></center>
                     <div class="input-field col s12">
-                        <input id="correo" name="correo" type="email" class="validate" required>
+                        <input id="correo" name="correo" type="email" value="{{ old('correo') }}" requiered autofocus class="validate" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ingresa un formato de correo electronico valido">
                         <label for="correo">Correo electronico:</label>
+                        <small style="color: red;">@error('correo') {{ $message }} @enderror</small> 
+
                     </div>
 
                     <div class="input-field col s11">
-                        <input id="contrasena" name="contrasena" type="password" class="validate" required>
+                        <input id="contrasena" name="contrasena" value="{{ old('contrasena') }}" required type="password" class="validate" >
                         <label for="contrasena">Contraseña:</label>
                     </div>
                     <div class="col s1">
                         <button style="background-color: #fff; border:#fff; cursor:pointer;" type="button" onclick="mostrarContrasena()"><i class="material-icons ">remove_red_eye</i></button>
                     </div>
+                    <div class="col s12"><small style="color: red;">@error('contrasena') {{ $message }} @enderror</small> </div>
 
                     <center><input class="btn" type="submit" value="Iniciar sesion"></input></center>
 

@@ -15,8 +15,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('index');
-})->name('home');
+    return view('index');}
+    )->name('home');
 
 Route::get('productos', [ProductosController::class, 'mostrar'])->name('productos.show');
 

@@ -16,6 +16,8 @@ class ProductosController extends Controller
 
         $computadoras = Product::where('categoria', 'computadoras')->get();
         
+
+       // return $computadoras;
         return view('computadoras', compact('computadoras'));
     }
 
@@ -40,7 +42,7 @@ class ProductosController extends Controller
         $producto = Product::where('nombre', $computadoras)->first();
     
         if($producto == null){
-            abort(404);
+            abort(500);
         }
 
         return view('computadora', compact('producto'));

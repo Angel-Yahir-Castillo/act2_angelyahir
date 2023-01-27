@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -24,6 +25,12 @@ class UserController extends Controller
 
     public function validar_register(Request $request){
 
+        $request->validate([
+            'correo' => ['required', 'email', 'string'],
+            'contrasena' => ['required', 'string'],
+            'nombre' => ['required', 'string'],
+        ]);
+
         $user = new User();
         $user->name = $request->nombre;
         $user->email = $request->correo;
@@ -38,6 +45,11 @@ class UserController extends Controller
 
     
     public function inicia_sesion(Request $request){
+        
+        $request->validate([
+            'correo' => ['required', 'email', 'string'],
+            'contrasena' => ['required', 'string'],
+        ]);
 
         $credentials = [
             "email" => $request->correo,
@@ -52,9 +64,13 @@ class UserController extends Controller
 
             return redirect(route('user.sesion'));
         }
-        else{
-            return redirect(route('user.login'));
-        }
+
+        throw validationException::withMessages([
+            'correo' => __('auth.failed'),
+            'contrasena' => __('auth.password')
+        ]);
+
+        //return redirect(route('user.login'));
 
     }
 
