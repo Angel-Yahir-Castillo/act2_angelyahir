@@ -17,12 +17,14 @@
                         <input id="nombre" type="text" value="{{ old('nombre') }}" name="nombre" class="validate" required
                             pattern="[A-Za-z]{4,}" title="Solo se pueden colocar letras">
                         <label for="nombre">Nombre:</label>
+                        <small style="color: red;">@error('nombre') {{ $message }} @enderror</small> 
                     </div>
 
                     <div class="input-field col s12">
                         <input id="correo" name="correo" type="email" value="{{ old('correo') }}" class="validate" required
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ingresa un correo electronico valido">
                         <label for="correo">Correo electronico:</label>
+                        <small style="color: red;">@error('correo') {{ $message }} @enderror</small> 
                     </div>
 
                     <div class="input-field col m5 l5 s11">
@@ -30,6 +32,7 @@
                             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,}$" title="La contraseña debe contener al menos una letra mayuscula, 
                             una letra miniscula, un numero, un caracter especial y una longitud de al menos 8 caracteres">
                         <label for="contrasena">Contraseña:</label>
+                        <small style="color: red;">@error('contrasena') {{ $message }} @enderror</small> 
                     </div>
                     <div class="col m1 l1 s1">
                         <button style="background-color: #fff; border:#fff; cursor:pointer;" type="button" onclick="mostrarContrasena()"><i class="material-icons ">remove_red_eye</i></button>

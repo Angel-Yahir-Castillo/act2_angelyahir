@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Database\QueryException;
 
 class UserController extends Controller
 {
@@ -26,7 +27,7 @@ class UserController extends Controller
     public function validar_register(Request $request){
 
         $request->validate([
-            'correo' => ['required', 'email', 'string'],
+            'correo' => ['required', 'email', 'string', 'unique:users,email'],
             'contrasena' => ['required', 'string'],
             'nombre' => ['required', 'string'],
         ]);
@@ -36,16 +37,22 @@ class UserController extends Controller
         $user->email = $request->correo;
         $user->password = Hash::make($request->contrasena);
 
-        $user->save();
+       if($user->save()){
+            Auth::login($user);
+            return redirect(route('user.sesion'));
+        }
+        else{
+            return redirect(route('user.registro'));
+        }
 
-        Auth::login($user);
 
-        return redirect(route('user.sesion'));
     }
 
     
     public function inicia_sesion(Request $request){
         
+        $user = User::where('email', $request->correo)->get();
+
         $request->validate([
             'correo' => ['required', 'email', 'string'],
             'contrasena' => ['required', 'string'],
@@ -65,10 +72,16 @@ class UserController extends Controller
             return redirect(route('user.sesion'));
         }
 
-        throw validationException::withMessages([
-            'correo' => __('auth.failed'),
-            'contrasena' => __('auth.password')
-        ]);
+        if(count($user) >0){
+            throw validationException::withMessages([
+                'contrasena' => __('auth.password')
+            ]);
+        }
+        else{
+            throw validationException::withMessages([
+                'correo' => __('auth.failed'),
+            ]);
+        }
 
         //return redirect(route('user.login'));
 
