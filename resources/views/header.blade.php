@@ -85,6 +85,14 @@
                                 </i>
                             </a>
                         </li>
+                        <li>
+                        <a class="" href="{{ route('respaldo.db') }}">
+                            <b>Respaldo de informacion</b>
+                            <i class="material-icons left">
+                            computer
+                            </i>
+                        </a>
+                        </li>
                     </ul>
         
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use ZipArchive;
 
 class ProductosController extends Controller
 {
@@ -11,6 +12,37 @@ class ProductosController extends Controller
         return view('productos');
     }
 
+    public function respaldar(){
+
+        
+        $nombre = "bndh";
+        $usuario = "root";
+        $password = "";
+    
+        $fecha = date('Y-m-d_His');
+    
+        $nombre_sql = $nombre.'-'.$fecha.'.sql';
+    
+        $dump = "mysqldump --user=$usuario --password=$password $nombre > $nombre_sql";
+    
+        exec($dump);
+    
+        //para guardar en .zip
+        $zip = new ZipArchive();
+    
+        $nombre_zip = $nombre.'-'.$fecha.'.zip';
+    
+        if($zip->open($nombre_zip, ZipArchive::CREATE) === true){
+            $zip->addFile($nombre_sql);
+            $zip->close();
+            unlink($nombre_sql);
+            header("Location: $nombre_zip");
+            exit();
+            //return redirect(route('home'));
+        };
+
+        
+    }
 
     public function computadoras(){
 

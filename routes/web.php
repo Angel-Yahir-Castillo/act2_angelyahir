@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('productos', [ProductosController::class, 'mostrar'])->name('productos.show');
 
+Route::get('respaldo', [ProductosController::class, 'respaldar'])->name('respaldo.db');
 
 
 Route::get('productos/computadoras', [ProductosController::class, 'computadoras'])->name('productos.computadoras');
