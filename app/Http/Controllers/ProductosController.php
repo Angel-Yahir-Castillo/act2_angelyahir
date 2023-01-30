@@ -15,7 +15,7 @@ class ProductosController extends Controller
     public function respaldar(){
 
         
-        $nombre = "bndh";
+        $nombre = "BancoNacionalDeHuejutla";
         $usuario = "root";
         $password = "";
     
