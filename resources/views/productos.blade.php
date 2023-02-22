@@ -7,7 +7,7 @@
 @section('content')
     
     <div class="row">
-        <form action="{{ route('busqueda.avanzada') }}" method="get" class="col l5 m6 s12">
+        <form id="busquedaA" action="" method="" class="col l5 m6 s12">
             <div class="row">
                 <div class="input-field col l4 m5 s5 ">
                     <select name="marca"> 
@@ -30,11 +30,13 @@
                     <label>Categoria</label>
                 </div>
                 <div class="col s1">
-                    <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
+                    <button style="background-color: #fff; border:#fff; cursor:pointer;" onclick="busquedaAvanzada()" type="button" value=""><i class="material-icons medium">search</i></button>
                 </div>
             </div>
         </form>
+
         <div class="col m0 l3 s0 "></div>
+
         <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m6 s12">
             <div class="row ">
                 <div class="input-field col s11">
@@ -66,17 +68,13 @@
 
     <div class="row">
         <center><h3>Productos</h3></center>
-        <div id="productos" onload="" class="col s12">
+        <div id="productos"  class="col s12">
 
         </div>
     </div>
     
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+
 
         listarProductos();
     </script>

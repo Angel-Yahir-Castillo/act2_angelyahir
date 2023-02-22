@@ -48,12 +48,53 @@ $(document).ready(function(){
 }); */
 
 function listarProductos(){
-    $("#productos").val('');
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#productos").empty();
     $.ajax({
         url: "productosApi",
         type: "POST",
         success: function(result){
             var resultado = JSON.parse(result);
+            resultado.forEach(renglon => {
+                $registro = `<div class="row z-depth-2 section">
+                    <div class="col s12 m4 l3">
+                        <img class="responsive-img" src=" productos_imagenes/${renglon.imagen}">
+                    </div>
+                    <div class="col s12 m8 l9">
+                        <a href="productos/computadoras/${renglon.nombre}"><h4 class="black-text">${renglon.nombre}</h4></a>
+                        <h5>$ ${renglon.precio}</h5>
+                        <h6>Marca: ${renglon.marca}</h6>
+                        <h6>Modelo: ${renglon.modelo}</h6>
+                    </div>
+                </div>`
+                $("#productos").append($registro);
+            });            
+        }
+    }); 
+}
+
+function busquedaAvanzada(){
+    console.log("Busqueda Avanzada");
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#productos").empty();
+    //document.getElementById('productos').innerHTML = '';
+    $.ajax({
+        url: "busquedaAApi",
+        type: "POST",
+        data: $("#busquedaA").serialize(),
+        success: function(result){
+            var resultado = JSON.parse(result);
+            console.log(resultado);
             resultado.forEach(renglon => {
                 $registro = `<div class="row z-depth-2 section">
                     <div class="col s12 m4 l3">

@@ -137,6 +137,22 @@ class ProductosController extends Controller
 
     }
 
+    public function busquedaAvanzadaApi(Request $request){
+
+        $productos = Product::where('marca',  'Like', '%'.$request->marca.'%')->where('categoria', $request->categoria)->get();
+    
+        $data = [
+            'productos' => $productos,
+        ];
+        if($productos == null){
+            return 'No hay productos';
+        }
+
+        
+        return json_encode($productos);
+
+    }
+
     public function busquedaAvanzada(Request $request){
 
         $productos = Product::where('marca',  'Like', '%'.$request->marca.'%')->where('categoria', $request->categoria)->get();
