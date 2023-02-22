@@ -12,6 +12,11 @@ class ProductosController extends Controller
         return view('productos');
     }
 
+    public function mostrarProductos(){
+        $productos = Product::all();
+        return $productos;
+    }
+
     public function respaldar(){
 
         

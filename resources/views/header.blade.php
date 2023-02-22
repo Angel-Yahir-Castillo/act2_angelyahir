@@ -84,7 +84,7 @@
                                     account_circle
                                 </i>
                             </a>
-                        </li>
+                        </li> <!--
                         <li>
                         <a class="" href="{{ route('respaldo.db') }}">
                             <b>Respaldo de informacion</b>
@@ -92,13 +92,14 @@
                             computer
                             </i>
                         </a>
-                        </li>
+                        </li>-->
                     </ul>
         
                 </div>
                 
             </nav>
         </div>
+
 
         <ul id="id_sesiones" class="dropdown-content">
             <li>
@@ -140,13 +141,40 @@
             </li>
         </ul>
 
+        <div class="container section">
+            <div class="row">
+                <div class="col s11"></div>
+                <div class="col s1">
+                    <button class="btn" id="claro" style="background-color: black" onclick="cambiaFondo()"><i class="material-icons white-text medium">brightness_2</i></button>
+                    <button class="btn" id="oscuro" style="background-color: white; display: none " onclick="cambiaFondo()"><i class="material-icons black-text medium">brightness_low</i></button>
+                </div>
+            </div>
+            @yield('content')
+        </div>
 
 
     @endif
 
     
-    @yield('content')
-    
+
+    <script>
+        function cambiaFondo(){
+            let oscuro = document.getElementById('oscuro');
+            let claro = document.getElementById('claro');
+            if( document.body.style.backgroundColor ===  'white'){
+                document.body.style.backgroundColor =  'black'; 
+                document.body.style.color =  'white'; 
+                oscuro.style.display = 'block';
+                claro.style.display = 'none';
+            }
+            else{
+                document.body.style.backgroundColor =  'white'; 
+                document.body.style.color =  'black'; 
+                oscuro.style.display = 'none';
+                claro.style.display = 'block';
+            }
+        }
+    </script>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
