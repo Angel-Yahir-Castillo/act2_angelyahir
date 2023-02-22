@@ -7,7 +7,7 @@
 @section('content')
     
     <div class="row">
-        <form action="{{ route('busqueda.avanzada') }}" method="get" class="col l4 m5 s12">
+        <form action="{{ route('busqueda.avanzada') }}" method="get" class="col l5 m6 s12">
             <div class="row">
                 <div class="input-field col l4 m5 s5 ">
                     <select name="marca"> 
@@ -23,9 +23,9 @@
                 </div>
                 <div class="input-field col l4 m5 s6 ">
                     <select name="categoria"> 
-                        <option value="computadoras">LAPTOPS</option>
+                        <option selected value="computadoras">LAPTOPS</option>
                         <option value="tablets">TABLETS</option>
-                        <option value="smarthphones" selected>TELEFONO</option>
+                        <option value="smarthphones" >TELEFONO</option>
                     </select>
                     <label>Categoria</label>
                 </div>
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </form>
-        <div class="col m7 l4 s0 "></div>
-        <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m8 s12">
+        <div class="col m0 l3 s0 "></div>
+        <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m6 s12">
             <div class="row ">
                 <div class="input-field col s11">
                     <input id="nombre" name="nombre" type="text" class="validate" required>
@@ -62,9 +62,23 @@
         <div class="col s4">
         <center><a class="btn" href="{{ route('productos.tablets') }}"> Tablets </a> <br></center>
         </div>
-        <h1>Productos</h1>
+    </div>
 
+    <div class="row">
+        <center><h3>Productos</h3></center>
+        <div id="productos" onload="" class="col s12">
+
+        </div>
     </div>
     
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        listarProductos();
+    </script>
 @endsection
 

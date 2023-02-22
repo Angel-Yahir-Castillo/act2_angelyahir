@@ -12,9 +12,9 @@ class ProductosController extends Controller
         return view('productos');
     }
 
-    public function mostrarProductos(){
+    public function mostrarProductos(Request $request){
         $productos = Product::all();
-        return $productos;
+        return json_encode($productos);
     }
 
     public function respaldar(){

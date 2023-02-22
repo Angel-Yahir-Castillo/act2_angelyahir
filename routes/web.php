@@ -19,6 +19,7 @@ Route::get('/', function () {
     )->name('home');
 
 Route::get('productos', [ProductosController::class, 'mostrar'])->name('productos.show');
+Route::post('productosApi', [ProductosController::class, 'mostrarProductos'])->name('productos.api');
 
 Route::get('respaldo', [ProductosController::class, 'respaldar'])->name('respaldo.db');
 
