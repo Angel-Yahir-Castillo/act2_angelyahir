@@ -37,14 +37,14 @@
 
         <div class="col m0 l3 s0 "></div>
 
-        <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m6 s12">
+        <form id="busquedaS" action="" method="" class="col l4 m6 s12">
             <div class="row ">
                 <div class="input-field col s11">
                     <input id="nombre" name="nombre" type="text" class="validate" required>
                     <label for="nombre">Buscar Producto:</label>
                 </div>
                 <div class="col s1">
-                    <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
+                    <button style="background-color: #fff; border:#fff; cursor:pointer;" onclick="busquedaSimple()" type="button" value=""><i class="material-icons medium">search</i></button>
                 </div>
             </div>
         </form>
@@ -73,9 +73,15 @@
         </div>
     </div>
     
+    <style>
+        .contProductos{
+            transition: all 300ms;
+        }
+        .contProductos:hover{
+            transform: scale(1.15);
+        }
+    </style>
     <script>
-
-
         listarProductos();
     </script>
 @endsection

@@ -122,6 +122,18 @@ class ProductosController extends Controller
     }
 
 
+    public function busquedaApi(Request $request){
+
+        $productos = Product::where('nombre',  'Like', '%'.$request->nombre.'%')->get();
+    
+        if($productos == null){
+            return 'No hay productos';
+        }
+
+        return json_encode($productos);
+
+    }
+
     public function busqueda(Request $request){
 
         $productos = Product::where('nombre',  'Like', '%'.$request->nombre.'%')->get();

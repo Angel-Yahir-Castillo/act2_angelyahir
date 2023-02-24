@@ -40,6 +40,7 @@ Route::get('productos/tablets/{producto}', [ProductosController::class, 'tablets
 
 
 Route::get('productos/busqueda', [ProductosController::class, 'busqueda'])->name('busqueda.simple');
+Route::post('busquedaApi', [ProductosController::class, 'busquedaApi']);
 
 Route::get('productos/busquedaA', [ProductosController::class, 'busquedaAvanzada'])->name('busqueda.avanzada');
 Route::post('busquedaAApi', [ProductosController::class, 'busquedaAvanzadaApi']);
