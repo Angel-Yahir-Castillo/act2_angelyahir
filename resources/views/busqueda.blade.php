@@ -1,5 +1,9 @@
 @extends('header')
 
+@section('meta')
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+@endsection
+
 @section('title', 'Buscar Producto')
 
 @section('content')
@@ -52,7 +56,7 @@
         {{ Breadcrumbs::render('buscar') }}
             <div class="col s12">
                 @foreach ($productos as $producto)
-                    <div class="row z-depth-2 section">
+                    <div class="row z-depth-2 section contProductos">
                         <div class="col s12 m4 l3">
                             <img class="responsive-img" src="{{ asset('productos_imagenes/'.$producto->imagen) }}">
                         </div>

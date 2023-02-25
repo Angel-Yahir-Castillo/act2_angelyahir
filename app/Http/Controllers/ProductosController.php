@@ -50,7 +50,7 @@ class ProductosController extends Controller
     }
 
     public function computadorasApi(Request $request){
-    $computadoras = Product::where('categoria', 'computadoras')->get();
+        $computadoras = Product::where('categoria', 'computadoras')->get();
        return json_encode($computadoras);
     }
 

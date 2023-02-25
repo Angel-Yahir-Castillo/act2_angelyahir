@@ -105,6 +105,27 @@
         </div>
 
 
+    <ul class="sidenav" style="background-color: #fff"  id="menu-responsive">
+        <li><a  href="{{ route('home')}}" style="<?php if(request()->Is('/')) echo 'background-color: #F4B41A; color:#000;';?>" class=""><b>Inicio</b></a></li> 
+        <li>
+            <a class="" href="{{ route('productos.show') }}" style="<?php if(request()->Is('productos/*') or request()->Is('productos')) echo 'background-color: #F4B41A; color:#000;'; ?>">
+                <b>Productos</b>
+                <i class="material-icons left">
+                computer
+                </i>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-trigger" href="#" data-target="id_sesiones" style="<?php if (request()->Is('login') or request()->Is('registro')) echo 'background-color: #F4B41A; color:#000;'; ;?>">
+                <b>Cuenta</b>
+                <i class="material-icons left">
+                    account_circle
+                </i>
+            </a>
+        </li>
+    </ul>
+
+
         <ul id="id_sesiones" class="dropdown-content">
             <li>
                 <a class="black-text" href="{{ route('user.login') }}">

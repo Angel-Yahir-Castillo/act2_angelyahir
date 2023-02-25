@@ -1,5 +1,9 @@
 @extends('header')
 
+@section('meta')
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+@endsection
+
 @section('title', 'Tabletas')
 
 @section('content')
@@ -56,7 +60,7 @@
         <center><h3>Tablets</h3></center>
             <div class="col s12">
                 @foreach ($tablets as $tableta)
-                    <div class="row z-depth-2 section">
+                    <div class="row z-depth-2 section contProductos">
                         <div class="col s12 m4 l3">
                             <img class="responsive-img" src="{{ asset('productos_imagenes/'.$tableta->imagen) }}">
                         </div>
