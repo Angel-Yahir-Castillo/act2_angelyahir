@@ -116,7 +116,7 @@
             </a>
         </li>
         <li>
-            <a class="dropdown-trigger" href="#" data-target="id_sesiones" style="<?php if (request()->Is('login') or request()->Is('registro')) echo 'background-color: #F4B41A; color:#000;'; ;?>">
+            <a class="dropdown-trigger" href="#" data-target="id_sesionResp" style="<?php if (request()->Is('login') or request()->Is('registro')) echo 'background-color: #F4B41A; color:#000;'; ;?>">
                 <b>Cuenta</b>
                 <i class="material-icons left">
                     account_circle
