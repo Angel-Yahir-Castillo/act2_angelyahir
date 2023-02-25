@@ -1,0 +1,6 @@
+.contProductos{
+    transition: all 300ms;
+}
+.contProductos:hover{
+    transform: scale(1.15);
+}

@@ -3,9 +3,8 @@
 @section('title', 'SmarthPhones')
 
 @section('content')
-    <div class="container">
-    <div class="row ">
-    <br><form action="{{ route('busqueda.avanzada') }}" method="get" class="col l4 m5 s12">
+<div class="row ">
+        <form action="{{ route('busqueda.avanzada') }}" method="get" class="col l6 m6 s12">
             <div class="row">
                 <div class="input-field col l4 m5 s5 ">
                     <select name="marca"> 
@@ -32,8 +31,10 @@
                 </div>
             </div>
         </form>
-        <br><div class="col m7 l4 s0 "></div>
-        <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m8 s12">
+
+        <div class="col m0 l1 s0 "></div>
+        
+        <form action="{{ route('busqueda.simple') }}" method="get" class="col l5 m6 s12">
             <div class="row ">
                 <div class="input-field col s11">
                     <input id="nombre" name="nombre" type="text" class="validate" required>
@@ -44,9 +45,13 @@
                 </div>
             </div>
         </form>
-        </div>
+    </div>
+
+    <div class="row">
+    {{ Breadcrumbs::render('telefonos') }}
+    </div>
         <div class="row">
-        {{ Breadcrumbs::render('telefonos') }}
+        <center><h3>SmarthPhones</h3></center>
             <div class="col s12">
                 @foreach ($telefonos as $telefono)
                     <div class="row z-depth-2 section">
@@ -63,7 +68,7 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    
 @endsection
 
 

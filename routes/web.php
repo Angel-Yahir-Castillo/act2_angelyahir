@@ -19,12 +19,14 @@ Route::get('/', function () {
     )->name('home');
 
 Route::get('productos', [ProductosController::class, 'mostrar'])->name('productos.show');
-Route::post('productosApi', [ProductosController::class, 'mostrarProductos'])->name('productos.api');
+
 
 Route::get('respaldo', [ProductosController::class, 'respaldar'])->name('respaldo.db');
 
 
 Route::get('productos/computadoras', [ProductosController::class, 'computadoras'])->name('productos.computadoras');
+
+
 
 Route::get('productos/smarthphones', [ProductosController::class, 'telefonos'])->name('productos.telefonos');
 
@@ -40,10 +42,9 @@ Route::get('productos/tablets/{producto}', [ProductosController::class, 'tablets
 
 
 Route::get('productos/busqueda', [ProductosController::class, 'busqueda'])->name('busqueda.simple');
-Route::post('busquedaApi', [ProductosController::class, 'busquedaApi']);
 
 Route::get('productos/busquedaA', [ProductosController::class, 'busquedaAvanzada'])->name('busqueda.avanzada');
-Route::post('busquedaAApi', [ProductosController::class, 'busquedaAvanzadaApi']);
+
 
 Route::get('productos/{producto}', [ProductosController::class, 'productoVer'])->name('producto.mostrar');
 

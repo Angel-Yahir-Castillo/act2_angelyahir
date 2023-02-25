@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class=" container">
+   
 
         <div class="row section">
             <div class="col m2 l3 s0 "></div>
@@ -43,7 +43,7 @@
             </form>
         </div>
 
-    </div>
+    
 
 
     <script>

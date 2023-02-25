@@ -3,9 +3,8 @@
 @section('title', 'Buscar Producto')
 
 @section('content')
-    <div class="container">
-        <br><div class="row ">
-        <br><form action="{{ route('busqueda.avanzada') }}" method="get" class="col l4 m5 s12">
+    <div class="row ">
+        <form action="{{ route('busqueda.avanzada') }}" method="get" class="col l6 m6 s12">
             <div class="row">
                 <div class="input-field col l4 m5 s5 ">
                     <select name="marca"> 
@@ -21,7 +20,7 @@
                 </div>
                 <div class="input-field col l4 m5 s6 ">
                     <select name="categoria"> 
-                        <option value="computadora">LAPTOPS</option>
+                        <option value="computadoras">LAPTOPS</option>
                         <option value="tablets">TABLETS</option>
                         <option value="smarthphones" selected>TELEFONO</option>
                     </select>
@@ -31,20 +30,24 @@
                     <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
                 </div>
             </div>
-            </form>
-            <div class="col m7 l4 s0 "></div>
-            <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m8 s12">
-                <div class="row ">
-                    <div class="input-field col s11">
-                        <input id="nombre" name="nombre" type="text" class="validate" required>
-                        <label for="nombre">Buscar Producto:</label>
-                    </div>
-                    <div class="col s1">
-                        <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
-                    </div>
+        </form>
+
+        <div class="col m0 l1 s0 "></div>
+        
+        <form action="{{ route('busqueda.simple') }}" method="get" class="col l5 m6 s12">
+            <div class="row ">
+                <div class="input-field col s11">
+                    <input id="nombre" name="nombre" type="text" class="validate" required>
+                    <label for="nombre">Buscar Producto:</label>
                 </div>
-            </form>
-        </div>
+                <div class="col s1">
+                    <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
         <div class="row ">
         {{ Breadcrumbs::render('buscar') }}
             <div class="col s12">
@@ -63,7 +66,7 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    
 @endsection
 
 

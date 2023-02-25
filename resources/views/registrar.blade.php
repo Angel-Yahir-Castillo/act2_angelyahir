@@ -3,7 +3,7 @@
 @section('title', 'Registrarse')
 
 @section('content')
-    <div class=" container">
+    
 
         <div class="row section">
         {{ Breadcrumbs::render('registro') }}
@@ -58,7 +58,7 @@
             </form>
         </div>
 
-    </div>
+    
 
 
     <script>

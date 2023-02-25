@@ -49,13 +49,14 @@ class ProductosController extends Controller
         
     }
 
+    public function computadorasApi(Request $request){
+    $computadoras = Product::where('categoria', 'computadoras')->get();
+       return json_encode($computadoras);
+    }
+
     public function computadoras(){
-
-        $computadoras = Product::where('categoria', 'computadoras')->get();
-        
-
        // return $computadoras;
-        return view('computadoras', compact('computadoras'));
+        return view('computadoras');
     }
 
     public function telefonos(){

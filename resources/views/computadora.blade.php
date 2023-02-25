@@ -1,11 +1,17 @@
 @extends('header')
 
+@section('meta')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+@endsection
+
 @section('title', $producto->nombre)
 
 @section('content')
-    <div class="container">
-            <div class="row">
-            <br><form action="{{ route('busqueda.avanzada') }}" method="get" class="col l4 m5 s12">
+
+<div class="row ">
+        <form action="{{ route('busqueda.avanzada') }}" method="get" class="col l6 m6 s12">
             <div class="row">
                 <div class="input-field col l4 m5 s5 ">
                     <select name="marca"> 
@@ -32,21 +38,28 @@
                 </div>
             </div>
         </form>
-            <br><div class="col m2 l4 s0 "></div>
-            <form action="{{ route('busqueda.simple') }}" method="get" class="col l4 m5 s12">
-                <div class="row ">
-                    <div class="input-field col s11">
-                        <input id="nombre" name="nombre" type="text" class="validate" required>
-                        <label for="nombre">Buscar Producto:</label>
-                    </div>
-                    <div class="col s1">
-                        <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
-                    </div>
+
+        <div class="col m0 l1 s0 "></div>
+        
+        <form action="{{ route('busqueda.simple') }}" method="get" class="col l5 m6 s12">
+            <div class="row ">
+                <div class="input-field col s11">
+                    <input id="nombre" name="nombre" type="text" class="validate" required>
+                    <label for="nombre">Buscar Producto:</label>
                 </div>
-            </form>
-        </div>
+                <div class="col s1">
+                    <button style="background-color: #fff; border:#fff; cursor:pointer;" type="submit" value=""><i class="material-icons medium">search</i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
         {{ Breadcrumbs::render('ver_computadora', $producto) }}
-            <div class="col s12">
+    </div>
+        
+    <div id="productos" class="row">
+        <div class="col s12">
                 <div class="row z-depth-2 section">
                     <div class="col s12 m4 l3">
                         <img class="responsive-img" src="{{ asset('productos_imagenes/'.$producto->imagen) }}">
@@ -61,5 +74,7 @@
             </div>
         </div>
     </div>
+
+    
 @endsection
 

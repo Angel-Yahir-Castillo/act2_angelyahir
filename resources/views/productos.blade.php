@@ -1,5 +1,10 @@
 @extends('header')
 
+@section('meta')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+@endsection
 
 @section('title', 'Productos')
 
@@ -7,7 +12,7 @@
 @section('content')
     
     <div class="row">
-        <form id="busquedaA" action="" method="" class="col l5 m6 s12">
+        <form id="busquedaA" action="" method="" class="col l6 m6 s12">
             <div class="row">
                 <div class="input-field col l4 m5 s5 ">
                     <select name="marca"> 
@@ -35,9 +40,9 @@
             </div>
         </form>
 
-        <div class="col m0 l3 s0 "></div>
+        <div class="col m0 l1 s0 "></div>
 
-        <form id="busquedaS" action="" method="" class="col l4 m6 s12">
+        <form id="busquedaS" action="" method="" class="col l5 m6 s12">
             <div class="row ">
                 <div class="input-field col s11">
                     <input id="nombre" name="nombre" type="text" class="validate" required>
@@ -73,14 +78,6 @@
         </div>
     </div>
     
-    <style>
-        .contProductos{
-            transition: all 300ms;
-        }
-        .contProductos:hover{
-            transform: scale(1.15);
-        }
-    </style>
     <script>
         listarProductos();
     </script>
