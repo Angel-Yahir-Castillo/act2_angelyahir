@@ -26,7 +26,8 @@
                         <label for="contrasena">Contraseña:</label>
                     </div>
                     <div class="col s1">
-                        <button style="background-color: #fff; border:#fff; cursor:pointer;" type="button" onclick="mostrarContrasena()"><i class="material-icons ">remove_red_eye</i></button>
+                        <button style="background-color: #fff; border:#fff; cursor:pointer;" type="button" onclick="mostrarContrasena()">
+                            <i class="material-icons ">remove_red_eye</i></button>
                     </div>
                     <div class="col s12"><small style="color: red;">@error('contrasena') {{ $message }} @enderror</small> </div>
 

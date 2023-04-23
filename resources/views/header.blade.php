@@ -88,7 +88,7 @@
                                     account_circle
                                 </i>
                             </a>
-                        </li> <!--
+                        </li>
                         <li>
                         <a class="" href="{{ route('respaldo.db') }}">
                             <b>Respaldo de informacion</b>
@@ -96,7 +96,7 @@
                             computer
                             </i>
                         </a>
-                        </li>-->
+                        </li>
                     </ul>
         
                 </div>
@@ -170,8 +170,10 @@
             <div class="row">
                 <div class="col s11"></div>
                 <div class="col s1">
-                    <button class="btn" id="claro" style="background-color: black" onclick=""><i class="material-icons white-text medium">brightness_2</i></button>
-                    <button class="btn" id="oscuro" style="background-color: white; display: none " onclick=""><i class="material-icons black-text medium">brightness_low</i></button>
+                    <button class="btn" id="claro" style="background-color: black" onclick="">
+                        <i class="material-icons white-text medium">brightness_2</i></button>
+                    <button class="btn" id="oscuro" style="background-color: white; display: none " onclick="">
+                        <i class="material-icons black-text medium">brightness_low</i></button>
                 </div>
             </div>
             @yield('content')
