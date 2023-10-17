@@ -1,9 +1,7 @@
 # GithHub Actions Workflow generated with Ghygen
-# Original configuration: https://ghygen.hi-folks.dev?code=065bc6a4fb9c86dcfeaf40660b1d4297
+# Original configuration: https://ghygen.hi-folks.dev?code=d293284b4c9e61ba7e88496eed5f9a18
 name: Template - Laravel application (Mysql)
-on:
-  schedule:
-    - cron: '0 0 * * *'
+on: [ workflow_dispatch ]
 
 jobs:
   laravel-tests:
@@ -126,4 +124,3 @@ jobs:
       run: |
         composer require --dev nunomaduro/larastan
         vendor/bin/phpstan analyse app -c ./vendor/nunomaduro/larastan/extension.neon  --level=4 --no-progress
-        
