@@ -3,7 +3,7 @@ name: Escaneo de seguridad
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   security:
