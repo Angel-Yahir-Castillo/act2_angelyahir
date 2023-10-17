@@ -14,6 +14,18 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// routes/web.php
+
+Route::get('/proyecto', function () {
+    return view('modelo');
+});
+
+// routes/web.php
+
+Route::get('/modelo-json', function () {
+    return response()->file('prophysio_random_forest_model.json');
+});
+
 Route::get('/', function () {
     return view('index');}
     )->name('home');
